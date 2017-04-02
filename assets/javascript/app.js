@@ -1,18 +1,18 @@
 $( document ).ready(function() {
 
 // my array
-var actions = ["Beyonce", "Taylor Swift", "Rihanna", "Betty White", "Whitney Houston", "Tyra Banks", "Oprah Winfrey","Kim Kardashian"];
+var topic = ["Beyonce", "Taylor Swift", "Rihanna", "Betty White", "Whitney Houston", "Tyra Banks", "Oprah Winfrey","Kim Kardashian"];
 
 //function that displays the gif buttons
 
 function displayGifButtons() {
 	$("#gifButtonsView").empty();
-	for (var i = 0; i < actions.length; i++) {
+	for (var i = 0; i < topic.length; i++) {
 		var gifButton = $("<button>");
 		gifButton.addClass("action");
 		gifButton.addClass("btn btn-primary")
-		gifButton.attr("data-name", actions[i]);
-		gifButton.text(actions[i]);
+		gifButton.attr("data-name", topic[i]);
+		gifButton.text(topic[i]);
 		$("#gifButtonsView").append(gifButton);
 	}
 }
@@ -25,7 +25,7 @@ function addNewButton() {
 		if (action == ""){
 			return false;//no blank buttons
 		}
-		actions.push(action);
+		topic.push(action);
 
 		displayGifButtons();
 		return false;
@@ -35,7 +35,7 @@ function addNewButton() {
 //function to remove last button
 function removeLastButton() {
 	$("removeGif").on("click", function() {
-		actions.pop(action);
+		topic.pop(action);
 		displayGifButtons();
 		return false;
 	});
