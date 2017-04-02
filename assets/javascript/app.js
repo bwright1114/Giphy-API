@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+
 // my array
 var actions = ["Beyonce", "Taylor Swift", "Rihanna", "Betty White", "Whitney Houston", "Tyra Banks", "Oprah Winfrey","Kim Kardashian"];
 
@@ -83,11 +84,14 @@ function displayGifs() {
 	});
 }
 
-//calls
+
 //list of already created ladies
 displayGifButtons();
 addNewButton();
 removeLastButton();
+
+
+
 //event listeners
 $(document).on("click", ".action", displayGifs);
 $(document).on("click", ".image", function() {
