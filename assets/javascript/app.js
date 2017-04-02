@@ -9,7 +9,7 @@ function displayGifButtons() {
 	$("#gifButtonsView").empty();
 	for (var i = 0; i < topic.length; i++) {
 		var gifButton = $("<button>");
-		gifButton.addClass("action");
+		gifButton.addClass("lady");
 		gifButton.addClass("btn btn-primary")
 		gifButton.attr("data-name", topic[i]);
 		gifButton.text(topic[i]);
@@ -21,11 +21,11 @@ function displayGifButtons() {
 
 function addNewButton() {
 	$("#addGif").on("click", function() {
-		var action = $("#actionInput").val().trim();
-		if (action == ""){
+		var lady = $("#topicInput").val().trim();
+		if (lady == ""){
 			return false;//no blank buttons
 		}
-		topic.push(action);
+		topic.push(lady);
 
 		displayGifButtons();
 		return false;
@@ -35,7 +35,7 @@ function addNewButton() {
 //function to remove last button
 function removeLastButton() {
 	$("removeGif").on("click", function() {
-		topic.pop(action);
+		topic.pop(lady);
 		displayGifButtons();
 		return false;
 	});
@@ -45,8 +45,8 @@ function removeLastButton() {
 // function that displays the gifs
 
 function displayGifs() {
-	var action = $(this).attr("data-name");
-	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + action + "&api_key=dc6zaTOxFJmzC&limit=8";
+	var lady = $(this).attr("data-name");
+	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + lady + "&api_key=dc6zaTOxFJmzC&limit=8";
 	
 	$.ajax({
 		url: queryURL,
@@ -93,7 +93,7 @@ removeLastButton();
 
 
 //event listeners
-$(document).on("click", ".action", displayGifs);
+$(document).on("click", ".lady", displayGifs);
 $(document).on("click", ".image", function() {
 	var state = $(this).attr('data-state');
 	if (state == 'still') {
