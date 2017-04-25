@@ -46,7 +46,7 @@ function removeLastButton() {
 
 function displayGifs() {
 	var lady = $(this).attr("data-name");
-	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + lady + "&api_key=dc6zaTOxFJmzC&limit=8";
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + lady + "&api_key=dc6zaTOxFJmzC&limit=8";
 	
 	$.ajax({
 		url: queryURL,
